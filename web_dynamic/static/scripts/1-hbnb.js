@@ -1,9 +1,8 @@
-$(document).ready(function() { 
-  let myAmenities = [];
-  $('div .amenities .popover ul li INPUT').click(function() {     
-    let amenityName = $(this).attr('data-name'); 
-    let amenityID = $(this).attr('data-id');    
-    
+$(document).ready(function () {
+  const myAmenities = [];
+  $('div .amenities .popover ul li INPUT').click(function () {
+    const amenityName = $(this).attr('data-name');
+
     $('div .amenities h4').css({
       width: '98%',
       height: '98%',
@@ -13,12 +12,12 @@ $(document).ready(function() {
       'padding-bottom': '16px'
     });
 
-    if ($(this).is(':checked')) {      
+    if ($(this).is(':checked')) {
       myAmenities.push(amenityName);
-    } else {      
-      let idx = myAmenities.indexOf(amenityName);
+    } else {
+      const idx = myAmenities.indexOf(amenityName);
       myAmenities.splice(idx, 1);
-    }    
-    $('div.amenities h4').text(myAmenities.join(', '));          
+    }
+    $('div.amenities h4').text(myAmenities.join(', '));
   });
 });
